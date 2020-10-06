@@ -47,10 +47,7 @@ export default {
 
   methods: {
     resultSearch() {
-      if(this.isQuery) {
-        this.$store.dispatch('FETCH_USERS');
-        this.isQuery = false;
-      }
+      this.isQuery && this.$store.dispatch('FETCH_USERS'); this.isQuery = false;
       console.log("dfs");
       this.opened = this.result === '' ? false : true;
       this.$store.dispatch('SEARCH_BY_NAME', this.result);
