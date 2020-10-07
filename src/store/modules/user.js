@@ -67,8 +67,7 @@ export default {
         SEARCH_BY_NAME({commit, state}, result) {
             try {
                 simulateQuery(() => {
-                    const users = JSON.parse(JSON.stringify(state.users));
-                    const filteredUsers = users.filter((el) => ~el.name.first.toLowerCase().indexOf(result.toLowerCase()));
+                    const filteredUsers = state.users.filter((el) => ~el.name.first.toLowerCase().indexOf(result.toLowerCase()));
                     commit('FILTERED_USERS', filteredUsers);
                 });
             } catch (e) {

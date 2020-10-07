@@ -35,7 +35,7 @@ export default {
   methods: {
     handlerClick(id) {
       this.$store.dispatch('DELETE_CARD', id);
-      this.$router.push('/users');
+      this.$router.push('/');
     }
   }
 }
